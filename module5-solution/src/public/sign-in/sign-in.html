@@ -19,8 +19,7 @@
 		<input type="text" name="lastname" placeholder="Lastname"
           ng-model="regCtrl.user.lastname"
           required
-          minlength="2"
-		  ng-change = "regCtrl.completed = false">
+          minlength="2">
           {{ regCtrl.user.lastname }}
           <span
             ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
@@ -49,7 +48,7 @@
           ng-model="regCtrl.user.menuid"
 		  pattern="(\w{2,})"
 		  required
-		  ng-blur="regCtrl.validateMenuId()">
+		  ng-change="regCtrl.validateMenuId()">
 		  <span ng-if="regCtrl.validated && !regCtrl.validMenuId">
             No such menu number exists
           </span>
