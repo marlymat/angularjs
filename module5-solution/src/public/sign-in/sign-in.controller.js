@@ -23,6 +23,7 @@ function RegistrationController($scope,InfoService) {
   regCtrl.validateMenuId = function () {
 	  regCtrl.completed = false;
 	  regCtrl.validated = false;
+	  regCtrl.user.menuid = regCtrl.user.menuid.toUpperCase();
 	  
 	  var promise = InfoService.getMenuItem(regCtrl.user.menuid);
 
